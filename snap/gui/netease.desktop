@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Netease-music
+GenericName=Netease-music
+Comment=Music player for netease cloud music
+Keywords=music
+Exec=netease-music
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=false
+StartupNotify=true

@@ -1,0 +1,58 @@
+name: netease-music
+version: '0.1'
+summary: netease cloud music player
+description: |
+  This is netease cloud music player
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  netease-music:
+    command: desktop-launch $SNAP/usr/lib/netease-cloud-music/netease-cloud-music
+    environment:  
+      LANG: zh_CN.utf8  
+    plugs:
+      - network
+      - unity7
+      - x11
+      - home
+      - opengl
+      - pulseaudio
+
+parts:
+  app:
+    plugin: dump
+    source: http://s1.music.126.net/download/pc/netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb
+    stage-packages:
+      - libnss3
+      - overlay-scrollbar
+      - libgail-dev
+      - overlay-scrollbar-gtk2
+      - unity-gtk-module-autopilot
+      - unity-gtk2-module:amd64
+      - gtk2-engines-murrine
+      - libcanberra-gtk-module
+      - libatk-bridge2.0-dev
+      - libatk-bridge2.0-0
+      - fonts-wqy-zenhei
+      - fcitx-frontend-qt5
+      - ubuntu-restricted-extras
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-plugins-ugly
+      - libqt5libqgtk2
+      - libqt5multimedia5
+      - libqt5multimedia5-plugins
+      - libqt5multimediawidgets5
+      - libfontconfig1
+      - gstreamer1.0-plugins-good
+      - libqt5x11extras5
+      - libasound2
+      - libnspr4
+      - libgstreamer-plugins-bad1.0-0
+      - libsoundtouch1
+      - gstreamer1.0-plugins-bad-videoparsers
+      - gstreamer1.0-plugins-bad-faad
+    after: [desktop-qt5]
+    install: |
+      chmod ug-s $SNAPCRAFT_PART_INSTALL/usr/lib/netease-cloud-music/chrome-sandbox 
