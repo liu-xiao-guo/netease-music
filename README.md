@@ -7,3 +7,7 @@ Known issues:
 	Using the fallback 'C' locale.
 
 Currently, the platform interface is not used
+
+You can install the app from the store:
+
+sudo snap install netease-music —devmode —beta
