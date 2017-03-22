@@ -1,5 +1,9 @@
 This is the snap application for the most famous netease cloud music application. 
 
+The original deb comes from:
+
+http://s1.music.126.net/download/pc/netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb
+
 Known issues:
   - the current snap file is a little big. If using platform interface, there is an error like:
 
